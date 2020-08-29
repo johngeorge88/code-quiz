@@ -1,0 +1,33 @@
+/* All buttons styling */
+button {
+    background-color: rgb(75, 41, 172);
+    color: white;
+    border-radius: 6px;
+    margin: 6px;
+    padding: 5px 10px;
+}
+button:hover {
+    background-color: rgb(119, 103, 161);
+}
+/* Header styling */
+.headText {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+.highScore a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Main Styling */
+.content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 20px;
+    text-align: center;
+}
