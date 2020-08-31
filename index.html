@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./Assets/css/style.css"/>
 </head>
 <body>
-    <header class="headText">
-        <h3 class="highScore"><a href="highscore.html">View Highscores</a></h3>
+    <header id="headContent" class="headText">
+        <h3 class="highScore"><a id="viewHighscores" href="#">View Highscores</a></h3>
         <h3 class="time">Time: <span id="timer">0</span></h3>
     </header>
 
@@ -32,6 +32,22 @@
             <br>
             <p id="checkAnswer"></p>
         </div>
+
+        <div id="end-screen">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="final-score"></span>.</p>
+            <p>
+              Enter initials: <input type="text" id="nameInitials" placeholder="Your Initials"/>
+              <button id="submit">Submit</button>
+            </p>
+          </div>
+          <div id="ScoreSheet" class="hideContent">
+            <h1>Highscores</h1>
+            <ol id="highscores"></ol>
+      
+            <a href="index.html"><button>Go Back</button></a>
+            <button id="clear">Clear Highscores</button>
+          </div>
     </main>
     
     <script src="./Assets/js/script.js"></script>
