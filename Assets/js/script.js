@@ -1,7 +1,3 @@
-var timer;
-var questionsIndex = 0;
-
-
 // Variable for all the questions and answers
 var questions = [
     {
@@ -36,12 +32,16 @@ var questions = [
       }
 ];
 
+var timer;
+var questionsIndex = 0;
+
 // other vaiables for DOM
 var headContentEl = document.getElementById("headContent");
 var timerEl = document.getElementById("timer");
 var startBtn = document.getElementById("start");
 var questionsEl = document.getElementById("questions");
 var choicesEl = document.getElementById("questionsChoices");
+choicesEl.setAttribute("class", "hideContent");
 var finalScoreEl = document.getElementById("final-score");
 var endSession = document.getElementById("end-screen");
 endSession.setAttribute("class", "hideContent");
@@ -58,6 +58,7 @@ var welcomeScreenEl = document.getElementById("welcomeScreen");
 function startQuiz() {
     // Hide welcome Screen
     welcomeScreenEl.style.display = "none";
+    choicesEl.removeAttribute("class", "hideContent");
     // Start Timer
     timer = 75;
     timerEl.textContent = timer;
@@ -84,6 +85,7 @@ function startQuiz() {
     startQuestions();
 };
 
+// End Quiz function
 function endQuiz () {
     questionsEl.style.display = "none";
     var endSession = document.getElementById("end-screen");
@@ -92,6 +94,8 @@ function endQuiz () {
 
 
 }
+
+// Correct answer function
 function correct() {
   answerEl.textContent = "Correct answer";
   if (questionsIndex == questions.length -1){
@@ -108,6 +112,7 @@ function correct() {
       }
 };
 
+// Incorrect answer function
 function incorrect() {
   answerEl.textContent = "Incorect answer";
   if (questionsIndex == questions.length -1){
@@ -124,6 +129,7 @@ function incorrect() {
     
   }
 };
+
 // Questions starting function
 function startQuestions() {
  
@@ -149,6 +155,7 @@ function startQuestions() {
 
 };
 
+// Saving the Highscores
 function highScore() {
   var score = {
     id: initialsEl.value,
@@ -162,16 +169,18 @@ function highScore() {
   highScoreList();
 };
 
+// Showing the highscore List
 function highScoreList() {
   headContentEl.setAttribute("class", "hideContent");
   endSession.setAttribute("class", "hideContent");
   scoreSheetEl.removeAttribute("class", "hideContent");
+  choicesEl.setAttribute("class", "hideContent");
   welcomeScreenEl.style.display = "none";
 
 createHighscoreList(fetchSavedScores());
 }
 
-
+// To clear the local storage
 function clearHighscores() {
   localStorage.clear();
   scoreListEl.innerHTML = "";
@@ -181,6 +190,7 @@ function fetchSavedScores() {
   return JSON.parse(localStorage.getItem("savedScores")) || [];
 }
 
+// View Highscore link
 function createHighscoreList (savedScores) {
   for (var i = 0; i < savedScores.length; i++) {
     var scoreItem = document.createElement("li");
@@ -188,8 +198,6 @@ function createHighscoreList (savedScores) {
     scoreListEl.appendChild(scoreItem);
   }
 };
-
-
 
 // Event Listeners
 startBtn.onclick = startQuiz;

@@ -9,6 +9,7 @@ button {
 button:hover {
     background-color: rgb(119, 103, 161);
 }
+
 /* Header styling */
 .headText {
     display: flex;
@@ -23,6 +24,7 @@ button:hover {
     color: black;
 }
 
+
 /* Main Styling */
 .content {
     display: flex;
@@ -32,7 +34,17 @@ button:hover {
     text-align: center;
 }
 
+#questions.quizQuestions {
+    display: block;
+    max-width: 600px;
+    text-align: left;
+}
+
 .hideContent {
     display: none;
 }
 
+#checkAnswer {
+    font-size: 20px;
+    border-top: 2px solid grey;
+}

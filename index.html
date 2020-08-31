@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="./Assets/css/style.css"/>
 </head>
 <body>
+    <!-- Header content -->
     <header id="headContent" class="headText">
         <h3 class="highScore"><a id="viewHighscores" href="#">View Highscores</a></h3>
         <h3 class="time">Time: <span id="timer">0</span></h3>
     </header>
-
+    <!-- Application Sections -->
     <main class="content">
+        <!-- Welcome Screen -->
         <div class="welcome" id="welcomeScreen">
             <h1>
                 Coding Quiz Challenge
@@ -25,6 +27,8 @@
                 Start Quiz
             </button>
         </div>
+
+        <!-- Questions sections -->
         <div id="questions" class="quizQuestions">
             <h2 id="questionsTitle" class="qTitle"></h2>
             <ol id="questionsChoices" class="qChoice">
@@ -33,6 +37,7 @@
             <p id="checkAnswer"></p>
         </div>
 
+        <!-- End-screen section -->
         <div id="end-screen">
             <h2>All done!</h2>
             <p>Your final score is <span id="final-score"></span>.</p>
@@ -40,14 +45,16 @@
               Enter initials: <input type="text" id="nameInitials" placeholder="Your Initials"/>
               <button id="submit">Submit</button>
             </p>
-          </div>
-          <div id="ScoreSheet" class="hideContent">
-            <h1>Highscores</h1>
-            <ol id="highscores"></ol>
-      
-            <a href="index.html"><button>Go Back</button></a>
-            <button id="clear">Clear Highscores</button>
-          </div>
+        </div>
+        
+        <!-- Highscore Sheet -->
+        <div id="ScoreSheet" class="hideContent">
+        <h1>Highscores</h1>
+        <ol id="highscores"></ol>
+    
+        <a href="index.html"><button>Go Back</button></a>
+        <button id="clear">Clear Highscores</button>
+        </div>
     </main>
     
     <script src="./Assets/js/script.js"></script>
